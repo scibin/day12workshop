@@ -64,7 +64,9 @@ app.get('/image', (req, res) => {
 // Serve image via render + HBS
 app.get('/hbsimage', (req, res) => {
     let hbsImg = imgNames[getRandomInt(imgNames.length)];
-    res.render('randoimg', {name: hbsImg});
+    // Case if wordArr is simple array
+    // res.render('randoimg', {name: hbsImg, wordArr: ['one', 'two', 'three']});
+    res.render('randoimg', {name: hbsImg, wordArr: [{val: 'one', quan: '2'}, {val: 'two', quan: '4'}, {val: 'three', quan: '6'}]});
 });
 
 // Serve image via sendFile
