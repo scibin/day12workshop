@@ -6,11 +6,9 @@ const fs = require('fs');
 const app = express();
 const APP_PORT = process.env.PORT || 3001;
 
+// Initialize handlebars
 // hbs() -> initalize from const hbs = require('express-handlebars');
 app.engine('hbs', hbs());
-
-// Lecturer's answer version
-// app.engine('hbs', exphb());
 app.set('view engine', 'hbs');
 
 // _________________________
@@ -39,7 +37,7 @@ fs.readdir(imgFolderPath, (err, files) => {
             imgNames.push(file);
             imgNamesWithPath.push(path.join(imgFolderPath, file));
         })
-        // console.log(imgNames.length);
+        // console.log(imgNamesWithPath);
         // console.log(imgNames[getRandomInt(imgNames.length)]);
         // console.log(imgNamesWithPath);
     };
